@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Platform : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
 
     public void update_color(int key)
