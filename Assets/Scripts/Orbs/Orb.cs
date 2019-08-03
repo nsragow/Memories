@@ -26,7 +26,7 @@ public class Orb : MonoBehaviour
         active = true;
         rend = GetComponent<SpriteRenderer>();
 
-        rend.color = bm.colors[color];
+        rend.color = bm.orb_colors[color];
     }
     private void Update()
     {
