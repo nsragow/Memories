@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: 32
-  upForce: 5
-  maxVel: 20
-  sideForce: 10
-  framesForJump: 7
-  cayoteeTime: 10
+  upForce: 6
+  maxVel: 5
+  sideForce: 12
+  framesForJump: 5
+  cayoteeTime: 2

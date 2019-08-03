@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.U2D;
 
 public class BoardManager : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class BoardManager : MonoBehaviour
     private Vector3 posCheck = new Vector3(10000, 10000, 10000); // A check for respawn purposes
     private int level = 1;
     private float timeRate = 1f;
-    public Dictionary<int, Color> colors = new Dictionary<int, Color>();
 
+    public SpriteShape Neutral;
+    public SpriteShape Green;
+    public SpriteShape Orange;
+    public SpriteShape Red;
+    public SpriteShape Blue;
+    public SpriteShape Yellow;
 
-    public GameObject platform_manager;
-    public Color current_color = new Color(0f, 0f, 0f, 1f);
+    public Dictionary<int, SpriteShape> colors = new Dictionary<int, SpriteShape>();
+    public Dictionary<int, Color> orb_colors = new Dictionary<int, Color>();
+    public SpriteShape current_color = null;
 
     // Public Variables
     public Vector3 respawn;
@@ -22,11 +29,23 @@ public class BoardManager : MonoBehaviour
     private void Awake()
     {
         //add colors to dictionary for outside access.
-        colors.Add(0, new Color(0f, 0f, 0f, 1f));
-        colors.Add(1, new Color(0f, 1f, 0f, 1f));
-        colors.Add(2, new Color(1f, 0f, 0f, 1f));
-        colors.Add(3, new Color(0f, 0f, 1f, 1f));
-        colors.Add(4, new Color(0f, 1f, 1f, 1f));
+        colors.Add(0, Neutral);
+        orb_colors.Add(0, new Color(0.4784314f, 0.2313726f, 0.2196079f, 1f));
+
+        colors.Add(1, Green);
+        orb_colors.Add(1, new Color(0.3843138f, 0.7058824f, 0.3843138f, 1f));
+
+        colors.Add(2, Orange);
+        orb_colors.Add(2, new Color(0.8666667f, 0.4039216f, 0.1372549f, 1f));
+
+        colors.Add(3, Red);
+        orb_colors.Add(3, new Color(0.7372549f, 0.1098039f, 0.1098039f, 1f));
+
+        colors.Add(4, Blue);
+        orb_colors.Add(4, new Color(0.5803922f, 0.7450981f, 0.9058824f, 1f));
+
+        colors.Add(5, Yellow);
+        orb_colors.Add(5, new Color(0.9058824f, 0.8117648f, 0.4509804f, 1f));
     }
 
     // Start is called before the first frame update

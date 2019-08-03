@@ -3656,12 +3656,12 @@ PrefabInstance:
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.42
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.64
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
@@ -3707,31 +3707,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: upForce
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: maxVel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: sideForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: framesForJump
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: cayoteeTime
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ce19bdfcdf9da40a29a44661e71998, type: 3}
@@ -5140,8 +5115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a1f67e95c8c4b4187d6706b65531de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform_manager: {fileID: 0}
-  current_color: {r: 0.9811321, g: 0.4569157, b: 0.09718761, a: 0}
+  Neutral: {fileID: 11400000, guid: 4d1e63b711a0a3b43b4d08c203fc29eb, type: 2}
+  Green: {fileID: 11400000, guid: ba8561159ab97ea40a5d488397f72525, type: 2}
+  Orange: {fileID: 11400000, guid: 3c45aa0daf8afc647bff21219732cbe9, type: 2}
+  Red: {fileID: 11400000, guid: 94eed2191f4b572408d675ad9d486e41, type: 2}
+  Blue: {fileID: 11400000, guid: ce183df6d1d6ede478cc15a0b57aa77e, type: 2}
+  Yellow: {fileID: 11400000, guid: 5233ef133ba443f41802459a0d83b444, type: 2}
+  current_color: {fileID: 0}
   respawn: {x: 0, y: 0, z: 0}
   gameOver: 0
 --- !u!4 &1506427078
@@ -7528,7 +7508,7 @@ PrefabInstance:
     - target: {fileID: 2567514500599591655, guid: 6cb3769b3f0ee0c44b73e5467e0231f8,
         type: 3}
       propertyPath: MyColors.Array.data[0]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb3769b3f0ee0c44b73e5467e0231f8, type: 3}

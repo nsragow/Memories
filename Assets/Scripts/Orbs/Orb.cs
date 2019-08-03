@@ -18,7 +18,7 @@ public class Orb : MonoBehaviour
     private BoardManager bm;
 
 
-    
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,7 +26,7 @@ public class Orb : MonoBehaviour
         active = true;
         rend = GetComponent<SpriteRenderer>();
 
-        rend.color = bm.colors[color];
+        rend.color = bm.orb_colors[color];
     }
     private void Update()
     {
@@ -36,7 +36,7 @@ public class Orb : MonoBehaviour
             if (timer < 0f)
             {
                 active = true;
-                rend.enabled = true; 
+                rend.enabled = true;
             }
         }
     }
@@ -51,5 +51,5 @@ public class Orb : MonoBehaviour
         }
     }
 
-   
+
 }
