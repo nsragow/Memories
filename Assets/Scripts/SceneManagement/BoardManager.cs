@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoardManager : MonoBehaviour
 {
@@ -8,16 +9,33 @@ public class BoardManager : MonoBehaviour
     private Vector3 posCheck = new Vector3(10000, 10000, 10000); // A check for respawn purposes
     private int level = 1;
     private float timeRate = 1f;
+    public Dictionary<int, Color> colors = new Dictionary<int, Color>();
+
+
+    public GameObject platform_manager;
+    public Color current_color = new Color(0f, 0f, 0f, 1f);
 
     // Public Variables
     public Vector3 respawn;
     public bool gameOver = false;
-    
+
+    private void Awake()
+    {
+        //add colors to dictionary for outside access.
+        colors.Add(0, new Color(0f, 0f, 0f, 1f));
+        colors.Add(1, new Color(0f, 1f, 0f, 1f));
+        colors.Add(2, new Color(1f, 0f, 0f, 1f));
+        colors.Add(3, new Color(0f, 0f, 1f, 1f));
+        colors.Add(4, new Color(0f, 1f, 1f, 1f));
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         ///StartCoroutine(GameTime());
+
+        set_color(1, colors[1]);
+
     }
 
     // Update is called once per frame
@@ -26,8 +44,17 @@ public class BoardManager : MonoBehaviour
 
     }
 
+    public void set_color(int key, Color new_color)
+    {
+        if (new_color != current_color)
+        {
+            current_color = new_color;
+            gameObject.BroadcastMessage("update_color", key);
+        }
+    }
+
     //Called to setup up the level.
-    public void Setup_Level(GameObject player, int Lvl)
+    public void Setup_Level(GameObject player)
     {
         respawn = posCheck;
 
