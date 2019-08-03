@@ -7,10 +7,10 @@ public class Orb : MonoBehaviour
     public float respawnTime = 5f;
     public float addTime = 5f;
     public OrbManager mngr;
+    public float timer;
+    public int color;
 
-    private int color;
     private bool active;
-    private float timer;
 
     private SpriteRenderer rend;
 

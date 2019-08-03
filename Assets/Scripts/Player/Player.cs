@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         if(currentVel > (-1 * maxVel))
         {
-            print("left");
+            
             rigidbody2D.AddForce(new Vector2(-1 * sideForce, 0));
         }
     }
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
 
         if (currentVel < (maxVel))
         {
-            print("right");
+            
             rigidbody2D.AddForce(new Vector2(sideForce, 0));
         }
     }
