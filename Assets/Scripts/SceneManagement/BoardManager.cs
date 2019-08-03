@@ -34,7 +34,7 @@ public class BoardManager : MonoBehaviour
     {
         ///StartCoroutine(GameTime());
 
-        set_color(1, colors[1]);
+        set_color(0);
 
     }
 
@@ -44,11 +44,11 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    public void set_color(int key, Color new_color)
+    public void set_color(int key)
     {
-        if (new_color != current_color)
+        if (colors[key] != current_color)
         {
-            current_color = new_color;
+            current_color = colors[key];
             gameObject.BroadcastMessage("update_color", key);
         }
     }

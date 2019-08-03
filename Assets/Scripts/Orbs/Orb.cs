@@ -8,19 +8,25 @@ public class Orb : MonoBehaviour
     public float addTime = 5f;
     public OrbManager mngr;
 
-    private int color;
+    [SerializeField]
+    int color;
+
     private bool active;
     private float timer;
 
     private SpriteRenderer rend;
+    private BoardManager bm;
 
 
     
     // Start is called before the first frame update
     private void Start()
     {
+        bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
         active = true;
         rend = GetComponent<SpriteRenderer>();
+
+        rend.color = bm.colors[color];
     }
     private void Update()
     {
