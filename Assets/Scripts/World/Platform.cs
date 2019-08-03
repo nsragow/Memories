@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Platform : MonoBehaviour
 {
     private BoardManager bm;
@@ -19,7 +20,7 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
 
     public void update_color(int key)
