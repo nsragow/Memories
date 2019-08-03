@@ -3656,12 +3656,12 @@ PrefabInstance:
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.42
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.64
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447984, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
@@ -3707,31 +3707,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: upForce
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: maxVel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: sideForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: framesForJump
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: cayoteeTime
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ce19bdfcdf9da40a29a44661e71998, type: 3}
