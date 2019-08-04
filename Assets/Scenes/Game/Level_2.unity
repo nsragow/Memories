@@ -1281,6 +1281,11 @@ PrefabInstance:
       propertyPath: cayoteeTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: upForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_GravityScale
