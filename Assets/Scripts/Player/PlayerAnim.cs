@@ -32,6 +32,7 @@ public class PlayerAnim : MonoBehaviour
 
     public void ChangeColor(int key)
     {
+        print(key);
         switch(key)
         {
             case 1:
@@ -54,6 +55,7 @@ public class PlayerAnim : MonoBehaviour
                 break;
         }
 
+        
         if (current_anim.runtimeAnimatorController != new_anim)
         {
             current_anim.runtimeAnimatorController = new_anim;

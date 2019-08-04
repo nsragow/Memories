@@ -76,7 +76,7 @@ public class Platform : MonoBehaviour
 
         if (to == 0f)
         {
-            print("called");
+            //print("called");
             shape_controller.enabled = false;
             my_col.enabled = false;
             visible = false;

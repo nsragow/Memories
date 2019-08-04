@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
 
         if(timeStamps.Length != clips.Length || colorIds.Length != clips.Length)
         {
-            Debug.LogError("Array length in Sound Manager must all match!;");
+            //Debug.LogError("Array length in Sound Manager must all match!;");
         }
         sources = new AudioSource[clips.Length];
         fadeDurations = new float[clips.Length];
@@ -71,7 +71,7 @@ public class SoundManager : MonoBehaviour
 
     public void AddTime(int color, float time)
     {
-        print("adding time");
+        //print("adding time");
         if (active)
         {
             if(color == activeColor)
@@ -131,7 +131,7 @@ public class SoundManager : MonoBehaviour
         }
         if (!found)
         {
-            Debug.LogError("did not find the right color!!!!");
+            //Debug.LogError("did not find the right color!!!!");
         }
 
         AddCurrentTime(time);
@@ -146,7 +146,7 @@ public class SoundManager : MonoBehaviour
         {
             leftoverTime = timeLeftSubSection - fadeDurations[index];
             sources[index].volume = maxVolume;
-            print("playing " + index);
+            //print("playing " + index);
             SoundUp();
             AddCurrentTime(leftoverTime);
         }
@@ -166,7 +166,7 @@ public class SoundManager : MonoBehaviour
         {
             leftoverTime = timeLeftSubSection;
             sources[index].volume = 0f;
-            print("turning off " + index);
+            //print("turning off " + index);
             SoundDown();
             RemoveTime(leftoverTime);
         }
@@ -175,7 +175,7 @@ public class SoundManager : MonoBehaviour
             float volumeIncrease = TimeToVolume(time);
             if (sources[index].volume - volumeIncrease <= 0)
             {
-                print("reached zero for " + index);
+                //print("reached zero for " + index);
             }
             sources[index].volume = Math.Max(sources[index].volume - volumeIncrease,0f);
         }
