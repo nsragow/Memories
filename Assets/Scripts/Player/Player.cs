@@ -31,12 +31,12 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(control))
         {
-            
+
             LeftForce();
         }
         else
         {
-            
+
             RightForce();
         }
 
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         if(currentVel > (-1 * maxVel))
         {
-            
+
             rigidbody2D.AddForce(new Vector2(-1 * sideForce, 0));
         }
     }
@@ -61,13 +61,13 @@ public class Player : MonoBehaviour
 
         if (currentVel < (maxVel))
         {
-            
+
             rigidbody2D.AddForce(new Vector2(sideForce, 0));
         }
     }
     private void Jump()
 	{
-      
+
         if (CanJump() && (extraJumpFrames > 0))
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, upForce);
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
 	void OnCollisionStay2D(Collision2D collision)
 	{
 		touchingFrames = cayoteeTime;
-        
+
 	}
-	
+
 }

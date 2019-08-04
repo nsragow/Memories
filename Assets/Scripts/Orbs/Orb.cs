@@ -13,14 +13,18 @@ public class Orb : MonoBehaviour
     private bool active;
 
     private SpriteRenderer rend;
+    private BoardManager bm;
 
 
-    
+
     // Start is called before the first frame update
     private void Start()
     {
+        bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
         active = true;
         rend = GetComponent<SpriteRenderer>();
+
+        rend.color = bm.orb_colors[color];
     }
     private void Update()
     {
@@ -30,7 +34,7 @@ public class Orb : MonoBehaviour
             if (timer < 0f)
             {
                 active = true;
-                rend.enabled = true; 
+                rend.enabled = true;
             }
         }
     }
@@ -45,5 +49,5 @@ public class Orb : MonoBehaviour
         }
     }
 
-   
+
 }

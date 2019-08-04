@@ -11,10 +11,17 @@ public class OrbManager : MonoBehaviour
     [SerializeField]
     public ColorChangeHandler handler;
 
+    private BoardManager bm;
+
     // Start is called before the first frame update
     void Start()
     {
+
         colorActive = false;
+
+        bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
+        
+
     }
 
     private void Update()
@@ -35,18 +42,18 @@ public class OrbManager : MonoBehaviour
         soundManager.AddTime(color, time);
         if (!colorActive)
         {
-            
+
             activeTime = time;
             Activate(color);
-            
+
         }
         else
         {
-            
+
             if (color != activeColor)
             {
                 Deactivate(activeColor);
-                
+
                 activeTime = time;
                 Activate(color);
 
@@ -62,14 +69,14 @@ public class OrbManager : MonoBehaviour
     {
         colorActive = true;
         activeColor = color;
-        
-        handler.Activate(color);
+
+        bm.set_color(color);
 
     }
     void Deactivate(int color)
     {
         colorActive = false;
-        
+
         handler.Deactivate(color);
     }
 
