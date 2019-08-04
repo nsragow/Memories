@@ -27,6 +27,7 @@ public class PlayerAnim : MonoBehaviour
         current_anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+        current_anim.runtimeAnimatorController = Nuetral;
     }
 
     public void ChangeColor(int key)
