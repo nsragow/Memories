@@ -18,14 +18,16 @@ public class FinalObject : MonoBehaviour
         {
             //Move to next scene
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            /*
-             * 0 = menu
-             * 1 = L1
-             * 2 = L2
-             * 3 = L3
-             * 4 = Credits, TODO
-             */
-            SceneManager.LoadScene(sceneIndex + 1);
+
+            if (sceneIndex == 4)
+            {
+                //back to initial screen
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneIndex + 1);
+            }
         }
     }
 }
