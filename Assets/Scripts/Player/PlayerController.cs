@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     public int cayoteeTime = 10; //frames after leaving surface when player can still perform jump
 
     public bool allowWallJump;
-    private int touchingFrames;
+    public int touchingFrames;
 
     private int movement;
     public bool executeJump; //indicates when the force will be applied
     public bool isJumping; //Indicates when to start checking for ground
+    public bool usedWallJump; //Indicates if player already used walljump
+    public int wallJumpSide; //Indicates to which side will be performed the wall jump
 
     private Rigidbody2D rigidbody2D;
 
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
         movement = Constants.movement_idle;
         executeJump = false;
         isJumping = false;
+        usedWallJump = false;
         touchingFrames = 0;
     }
 
@@ -56,15 +59,40 @@ public class PlayerController : MonoBehaviour
         }
 
         //Check for jump. If key is pressed 
-        if (Input.GetKey(jump))
+        if (Input.GetKeyDown(jump))
         {
+            //If player is already on air, wall jump is allowed and player hasn't walljumped
+            if (isJumping && allowWallJump && !usedWallJump)
+            {
+                //Check if there's a wall in range to the sides, and jump in the opposite direction if so
+                //Left first
+                RaycastHit2D raycast = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.left, Constants.groundRaycast_lenght, 1 << 8);
+                if (raycast.collider != null && raycast.collider.CompareTag(Constants.tag_platform))
+                {
+                    //flag the wall jump side to the right (oposite to the wall)
+                    wallJumpSide = Constants.movement_right;
+                    executeJump = true;
+                    usedWallJump = true;
+                }
+                //If nothing found on the left try right
+                else
+                {
+                    raycast = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.right, Constants.groundRaycast_lenght, 1 << 8);
+                    if (raycast.collider != null && raycast.collider.CompareTag(Constants.tag_platform))
+                    {
+                        //flag the wall jump side to the right (oposite to the wall)
+                        wallJumpSide = Constants.movement_left;
+                        executeJump = true;
+                        usedWallJump = true;
+                    }
+                }
+            }
             if (!executeJump && !isJumping)
             {
                 //Actual jump will happen in Fixed update
                 executeJump = true;
             }
         }
-
     }
 
     void FixedUpdate()
@@ -78,11 +106,23 @@ public class PlayerController : MonoBehaviour
         //If player pressed jump
         if (executeJump)
         {
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, upForce);
-            //jump executed
-            executeJump = false;
-            //start checking for ground
-            isJumping = true;
+            //If what the player is doing is a wall jump
+            if (usedWallJump)
+            {
+                //Perform the wall jump to the requested side
+                rigidbody2D.velocity = new Vector2(Constants.wallJumpForce.x * wallJumpSide, Constants.wallJumpForce.y);
+                //This will prevent any other jump to happen
+                executeJump = false;
+            }
+            //If not, it's a ground jump
+            else
+            {
+                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, upForce);
+                //jump executed
+                executeJump = false;
+                //start checking for ground
+                isJumping = true;
+            }
         }
         //Check for ground, so we know when to allow jump again
         else if (isJumping)
@@ -95,12 +135,9 @@ public class PlayerController : MonoBehaviour
             {
                 //Allow to jump again
                 isJumping = false;
+                //reset walljump
+                usedWallJump = false;
             }
         }
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        touchingFrames = cayoteeTime;
     }
 }

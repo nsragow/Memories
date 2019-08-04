@@ -991,15 +991,14 @@ MonoBehaviour:
   jump: 273
   left: 276
   right: 275
-  upForce: 10
+  upForce: 11
   sideForce: 25
   maxVelocity: 8
   cayoteeTime: 10
-  allowWallJump: 0
+  allowWallJump: 1
   executeJump: 0
   isJumping: 0
-  startOffsetY: -0.3
-  endY: -0.4
+  usedWallJump: 0
 --- !u!1001 &242264741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3741,7 +3740,7 @@ PrefabInstance:
     - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_LinearDrag
-      value: 0.9
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
