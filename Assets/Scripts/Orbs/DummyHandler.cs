@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DummyHandler : ColorChangeHandler
 {
+
     public override void Activate(int color)
     {
         Debug.LogWarning("color active!");

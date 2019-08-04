@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerSwitchStyle : MonoBehaviour
 {
     public KeyCode control = KeyCode.Space;
     public float upForce = 10f;
     public float maxVel = 20f;
-    public float sideForce= 1f;
+    public float sideForce = 1f;
     public int framesForJump = 7;
     public int cayoteeTime = 10;
 
     private Rigidbody2D rigidbody2D;
-	private int touchingFrames = 0;
+    private int touchingFrames = 0;
+    private bool moveLeft;
 
     private int extraJumpFrames = 0;
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.freezeRotation = true;
+        moveLeft = false;
     }
 
     // Update is called once per frame
@@ -28,8 +30,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(control))
         {
             extraJumpFrames = framesForJump;
+            moveLeft = !moveLeft;
         }
-        if (Input.GetKey(control))
+        if (moveLeft)
         {
 
             LeftForce();
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour
     {
         float currentVel = rigidbody2D.velocity.x;
 
-        if(currentVel > (-1 * maxVel))
+        if (currentVel > (-1 * maxVel))
         {
 
             rigidbody2D.AddForce(new Vector2(-1 * sideForce, 0));
@@ -66,7 +69,7 @@ public class Player : MonoBehaviour
         }
     }
     private void Jump()
-	{
+    {
 
         if (CanJump() && (extraJumpFrames > 0))
         {
@@ -78,15 +81,15 @@ public class Player : MonoBehaviour
         {
             extraJumpFrames--;
         }
-	}
+    }
     private bool CanJump()
     {
         return touchingFrames > 0;
     }
-	void OnCollisionStay2D(Collision2D collision)
-	{
-		touchingFrames = cayoteeTime;
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        touchingFrames = cayoteeTime;
 
-	}
+    }
 
 }

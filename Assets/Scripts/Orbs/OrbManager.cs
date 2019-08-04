@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class OrbManager : MonoBehaviour
 {
+    public SoundManager soundManager;
     private int activeColor;
     private float activeTime;
-    private bool active;
+    private bool colorActive;
     [SerializeField]
     public ColorChangeHandler handler;
 
@@ -15,13 +16,17 @@ public class OrbManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        colorActive = false;
+
         bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
-        active = false;
+        
+
     }
 
     private void Update()
     {
-        if (active)
+        if (colorActive)
         {
             activeTime -= Time.deltaTime;
             if (activeTime <= 0f)
@@ -34,18 +39,21 @@ public class OrbManager : MonoBehaviour
 
     public void Activated(int color, float time)
     {
-        if (!active)
+        soundManager.AddTime(color, time);
+        if (!colorActive)
         {
-            
+
             activeTime = time;
             Activate(color);
+
         }
         else
         {
-            if(color != activeColor)
+
+            if (color != activeColor)
             {
                 Deactivate(activeColor);
-                
+
                 activeTime = time;
                 Activate(color);
 
@@ -54,20 +62,21 @@ public class OrbManager : MonoBehaviour
             {
                 activeTime += time;
             }
+
         }
     }
     void Activate(int color)
     {
-        active = true;
+        colorActive = true;
         activeColor = color;
-        
+
         bm.set_color(color);
 
     }
     void Deactivate(int color)
     {
-        active = false;
-        
+        colorActive = false;
+
         handler.Deactivate(color);
     }
 
