@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Orb : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Orb : MonoBehaviour
     private SpriteRenderer rend;
     private BoardManager bm;
 
+    private TextMeshPro secondsText;
 
 
     // Start is called before the first frame update
@@ -25,6 +27,10 @@ public class Orb : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
 
         rend.color = bm.orb_colors[color];
+
+        //get the text component in children
+        secondsText = GetComponentInChildren<TextMeshPro>();
+        secondsText.text = addTime.ToString();
     }
     private void Update()
     {
@@ -35,6 +41,8 @@ public class Orb : MonoBehaviour
             {
                 active = true;
                 rend.enabled = true;
+                //activate text
+                secondsText.enabled = true;
             }
         }
     }
@@ -46,6 +54,8 @@ public class Orb : MonoBehaviour
             active = false;
             timer = respawnTime;
             rend.enabled = false;
+            //also deactivate text
+            secondsText.enabled = false;
         }
     }
 
