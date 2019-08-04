@@ -32,7 +32,7 @@ public class PlayerAnim : MonoBehaviour
 
     public void ChangeColor(int key)
     {
-        print(key);
+        //print(key);
         switch(key)
         {
             case 1:
