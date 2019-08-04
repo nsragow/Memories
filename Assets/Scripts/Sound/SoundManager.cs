@@ -6,7 +6,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public float maxVolume;
-    public AudioClip switchSound;
+    public AudioClip[] changeSounds;
+    
+
     public float switchVolume;
     //These need to be in ascending order
     [SerializeField]
@@ -110,7 +112,8 @@ public class SoundManager : MonoBehaviour
     }
     private void StartSound(int color, float time)
     {
-        switchSource.PlayOneShot(switchSound);
+
+        switchSource.PlayOneShot(changeSounds[color-1]);//because color 1 is n=in index 0
         active = true;
         activeColor = color;
 
