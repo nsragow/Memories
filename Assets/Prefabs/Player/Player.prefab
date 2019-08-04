@@ -165,6 +165,6 @@ MonoBehaviour:
   left: 276
   right: 275
   upForce: 11
-  sideForce: 28
+  sideForce: 24
   maxVelocity: 8
   allowWallJump: 0

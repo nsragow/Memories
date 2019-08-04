@@ -6877,7 +6877,7 @@ MonoBehaviour:
   left: 276
   right: 275
   upForce: 11
-  sideForce: 25
+  sideForce: 24
   maxVelocity: 8
   allowWallJump: 1
 --- !u!4 &1580431639 stripped

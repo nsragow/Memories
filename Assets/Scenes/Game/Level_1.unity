@@ -6047,6 +6047,11 @@ PrefabInstance:
       propertyPath: m_Sprites.Array.data[8]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2567514500599591655, guid: 6cb3769b3f0ee0c44b73e5467e0231f8,
+        type: 3}
+      propertyPath: MyColors.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb3769b3f0ee0c44b73e5467e0231f8, type: 3}
 --- !u!4 &1084715906 stripped
@@ -8270,6 +8275,11 @@ PrefabInstance:
       propertyPath: m_Sprites.Array.data[8]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2567514500599591655, guid: 6cb3769b3f0ee0c44b73e5467e0231f8,
+        type: 3}
+      propertyPath: MyColors.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb3769b3f0ee0c44b73e5467e0231f8, type: 3}
 --- !u!4 &1762354889 stripped
@@ -8704,6 +8714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprites.Array.data[8]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567514500599591655, guid: 6cb3769b3f0ee0c44b73e5467e0231f8,
+        type: 3}
+      propertyPath: MyColors.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb3769b3f0ee0c44b73e5467e0231f8, type: 3}
@@ -9925,6 +9940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[1].position.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567514500599591655, guid: 6cb3769b3f0ee0c44b73e5467e0231f8,
+        type: 3}
+      propertyPath: MyColors.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb3769b3f0ee0c44b73e5467e0231f8, type: 3}
