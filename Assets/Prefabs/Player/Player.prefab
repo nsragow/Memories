@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5594174281005447986}
   - component: {fileID: 5594174281005447997}
   - component: {fileID: 5594174281005447985}
+  - component: {fileID: 231928228}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -96,9 +97,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.7
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5594174281005447996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84e76166dd7774c29ada84da5ed1a62e, type: 3}
   m_Name: 
@@ -148,3 +149,22 @@ MonoBehaviour:
   sideForce: 12
   framesForJump: 5
   cayoteeTime: 2
+--- !u!114 &231928228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5594174281005447996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a2b47357472304d9006d2f33334969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 273
+  left: 276
+  right: 275
+  upForce: 11
+  sideForce: 28
+  maxVelocity: 8
+  allowWallJump: 0

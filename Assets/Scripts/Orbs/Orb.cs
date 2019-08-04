@@ -6,7 +6,7 @@ public class Orb : MonoBehaviour
 {
     public float respawnTime = 5f;
     public float addTime = 5f;
-    public OrbManager mngr;
+    //public OrbManager mngr;
     public float timer;
     public int color;
 
@@ -42,7 +42,7 @@ public class Orb : MonoBehaviour
     {
         if (active && collision.gameObject.tag.Equals("Player"))
         {
-            mngr.Activated(color, addTime);
+            bm.set_color(color, addTime);
             active = false;
             timer = respawnTime;
             rend.enabled = false;

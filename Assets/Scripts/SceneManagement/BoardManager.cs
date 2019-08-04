@@ -11,6 +11,8 @@ public class BoardManager : MonoBehaviour
     private int level = 1;
     private float timeRate = 1f;
 
+    public SoundManager soundManager;
+
     public SpriteShape Neutral;
     public SpriteShape Green;
     public SpriteShape Orange;
@@ -25,6 +27,7 @@ public class BoardManager : MonoBehaviour
     // Public Variables
     public Vector3 respawn;
     public bool gameOver = false;
+    public float color_time;
 
     private void Awake()
     {
@@ -53,8 +56,8 @@ public class BoardManager : MonoBehaviour
     {
         ///StartCoroutine(GameTime());
 
-        set_color(0);
-
+        set_color(0, 0);
+        //StartCoroutine(GameTime());
     }
 
     // Update is called once per frame
@@ -63,13 +66,14 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    public void set_color(int key)
+    public void set_color(int key, float time)
     {
-        if (colors[key] != current_color)
-        {
-            current_color = colors[key];
-            gameObject.BroadcastMessage("update_color", key);
-        }
+
+        current_color = colors[key];
+        gameObject.BroadcastMessage("update_color", key);
+        gameObject.BroadcastMessage("call_fade_out", time);
+        
+        update_time(key, time);
     }
 
     //Called to setup up the level.
@@ -87,14 +91,22 @@ public class BoardManager : MonoBehaviour
     // Do something every given amount of seconds;
     IEnumerator GameTime()
     {
+        float c_time = 0f;
         while (!gameOver)
         {
+            c_time += 1;
+            print(c_time);
             yield return new WaitForSeconds(timeRate);
             /// Call function
         }
     }
 
-
+    public void update_time(int color, float newTime)
+    {
+        //Do time things
+        if (soundManager != null)
+            soundManager.AddTime(color, newTime);
+    }
 
 }
 

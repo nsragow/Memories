@@ -8,27 +8,23 @@ public class PlayerController : MonoBehaviour
     public KeyCode left = KeyCode.LeftArrow;
     public KeyCode right = KeyCode.RightArrow;
 
-    public float upForce = 10f;
-    public float sideForce = 12f;
-    public float maxVelocity = 8f;
-    public int cayoteeTime = 10; //frames after leaving surface when player can still perform jump
+    public float upForce;
+    public float sideForce;
+    public float maxVelocity;
 
     public bool allowWallJump;
-    public int touchingFrames;
 
-    private int movement;
-    public bool executeJump; //indicates when the force will be applied
-    public bool isJumping; //Indicates when to start checking for ground
-    public bool usedWallJump; //Indicates if player already used walljump
-    public int wallJumpSide; //Indicates to which side will be performed the wall jump
+    private int movement; //-1,0,1 >> L,Idle,R
+    private bool executeJump; //indicates when the force will be applied
+    private bool isJumping; //Indicates when to start checking for ground
+    private bool usedWallJump; //Indicates if player already used walljump
+    private int wallJumpSide; //Indicates to which side will be performed the wall jump
 
     private Rigidbody2D rigidbody2D;
 
 
     void Start()
     {
-        //Player can't do wall jump in the first level
-        allowWallJump = false;
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.freezeRotation = true;
         //Start player in idle
@@ -36,7 +32,6 @@ public class PlayerController : MonoBehaviour
         executeJump = false;
         isJumping = false;
         usedWallJump = false;
-        touchingFrames = 0;
     }
 
     // Update is called once per frame
@@ -87,6 +82,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
+            //If this is a ground jump, so player is not in air basically
             if (!executeJump && !isJumping)
             {
                 //Actual jump will happen in Fixed update
@@ -113,6 +109,8 @@ public class PlayerController : MonoBehaviour
                 rigidbody2D.velocity = new Vector2(Constants.wallJumpForce.x * wallJumpSide, Constants.wallJumpForce.y);
                 //This will prevent any other jump to happen
                 executeJump = false;
+                //Allow a wall jump again
+                usedWallJump = false;
             }
             //If not, it's a ground jump
             else
