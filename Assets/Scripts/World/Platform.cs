@@ -72,9 +72,11 @@ public class Platform : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        //yield return new WaitUntil(() => E_time <= time);
+
         if (to == 0f)
         {
-            //print("called");
+            print("called");
             shape_controller.enabled = false;
             my_col.enabled = false;
             visible = false;
@@ -95,5 +97,7 @@ public class Platform : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         StartCoroutine(Start_Fade(0f, time));
+        yield return new WaitForSeconds(time);
+        bm.current_color = bm.colors[0];
     }
 }

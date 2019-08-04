@@ -11,6 +11,9 @@ public class BoardManager : MonoBehaviour
     private int level = 1;
     private float timeRate = 1f;
 
+    public GameObject Player;
+    private PlayerAnim P_Anim;
+
     public SoundManager soundManager;
 
     public SpriteShape Neutral;
@@ -55,7 +58,8 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
         ///StartCoroutine(GameTime());
-
+        if (Player != null)
+            P_Anim = Player.GetComponent<PlayerAnim>();
         set_color(0, 0);
         //StartCoroutine(GameTime());
     }
@@ -76,6 +80,10 @@ public class BoardManager : MonoBehaviour
         {
             update_time(key, time);
 
+        }
+        if (Player != null)
+        {
+            P_Anim.ChangeColor(key);
         }
     }
 
