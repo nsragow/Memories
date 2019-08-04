@@ -72,8 +72,11 @@ public class BoardManager : MonoBehaviour
         current_color = colors[key];
         gameObject.BroadcastMessage("update_color", key);
         gameObject.BroadcastMessage("call_fade_out", time);
-        
-        update_time(key, time);
+        if(key != 0)//There is no sound for neutral, so skip adding sound!
+        {
+            update_time(key, time);
+
+        }
     }
 
     //Called to setup up the level.
