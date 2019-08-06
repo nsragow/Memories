@@ -81,10 +81,8 @@ public class BoardManager : MonoBehaviour
             update_time(key, time);
 
         }
-        if (Player != null)
-        {
-            P_Anim.ChangeColor(key);
-        }
+
+        Player_Anim(key);
     }
 
     //Called to setup up the level.
@@ -116,8 +114,15 @@ public class BoardManager : MonoBehaviour
     {
         //Do time things
         if (soundManager != null)
-            soundManager.AddTime(color, newTime);
+            soundManager.AddTime(color, newTime + 3);
     }
 
+    public void Player_Anim(int key)
+    {
+        if (Player != null)
+        {
+            P_Anim.ChangeColor(key);
+        }
+    }
 }
 

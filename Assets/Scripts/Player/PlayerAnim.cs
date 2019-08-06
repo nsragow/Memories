@@ -21,7 +21,7 @@ public class PlayerAnim : MonoBehaviour
     private SpriteRenderer sr;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
         current_anim = gameObject.GetComponent<Animator>();
@@ -54,7 +54,6 @@ public class PlayerAnim : MonoBehaviour
                 new_anim = Nuetral;
                 break;
         }
-
         
         if (current_anim.runtimeAnimatorController != new_anim)
         {

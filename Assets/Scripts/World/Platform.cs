@@ -40,6 +40,7 @@ public class Platform : MonoBehaviour
         //if color code in list, change color
         else if (MyColors.Contains(key))
         {
+            //print("Here");
             shape_controller.spriteShape = bm.colors[key];
             StartCoroutine(Start_Fade(1, 1f));
             shape_controller.enabled = true;
@@ -80,6 +81,8 @@ public class Platform : MonoBehaviour
             shape_controller.enabled = false;
             my_col.enabled = false;
             visible = false;
+            
+            
         }
 
         if (to == 1)
@@ -99,5 +102,6 @@ public class Platform : MonoBehaviour
         StartCoroutine(Start_Fade(0f, time));
         yield return new WaitForSeconds(time);
         bm.current_color = bm.colors[0];
+        bm.Player_Anim(0);
     }
 }

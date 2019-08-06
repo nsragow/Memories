@@ -19,7 +19,7 @@ public class FinalObject : MonoBehaviour
             //Move to next scene
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            if (sceneIndex == 4)
+            if (sceneIndex == 5)
             {
                 //back to initial screen
                 SceneManager.LoadScene(0);
