@@ -40,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3570007585
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Orbs
+    uniqueID: 2059136283
     locked: 0

@@ -22,6 +22,7 @@ public class Orb : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        //addTime += 3;
         bm = GameObject.FindGameObjectWithTag("BoardManager").GetComponent<BoardManager>();
         active = true;
         rend = GetComponent<SpriteRenderer>();
@@ -30,7 +31,7 @@ public class Orb : MonoBehaviour
 
         //get the text component in children
         secondsText = GetComponentInChildren<TextMeshPro>();
-        secondsText.text = addTime.ToString();
+        secondsText.text = (addTime + 3).ToString();
     }
     private void Update()
     {

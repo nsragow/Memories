@@ -71,13 +71,13 @@ public class SoundManager : MonoBehaviour
 
     public void AddTime(int color, float time)
     {
-        //print("adding time");
+        print(active);
+        print(color);
         if (active)
         {
             if(color == activeColor)
             {
                 AddCurrentTime(time);
-                
             }
             else
             {
@@ -162,11 +162,12 @@ public class SoundManager : MonoBehaviour
         float leftoverTime = 0f;
         //timerLeft += time;
         timeLeftSubSection -= time;
+        print(timeLeftSubSection);
         if (timeLeftSubSection < 0)
         {
             leftoverTime = timeLeftSubSection;
             sources[index].volume = 0f;
-            //print("turning off " + index);
+            print("turning off " + index);
             SoundDown();
             RemoveTime(leftoverTime);
         }
