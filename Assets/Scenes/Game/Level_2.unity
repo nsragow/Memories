@@ -1271,6 +1271,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_Enabled
@@ -1286,16 +1296,11 @@ PrefabInstance:
       propertyPath: upForce
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
+    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1123951861}
     - target: {fileID: 231928228, guid: a0ce19bdfcdf9da40a29a44661e71998, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2388,11 +2393,6 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7506856101570348598, guid: d9f538cf1454b8d4299ba928ec0b8df6,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7506856101570348592, guid: d9f538cf1454b8d4299ba928ec0b8df6,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2412,6 +2412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506856101570348598, guid: d9f538cf1454b8d4299ba928ec0b8df6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f538cf1454b8d4299ba928ec0b8df6, type: 3}
@@ -3339,11 +3344,6 @@ PrefabInstance:
       propertyPath: addTime
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7506856101570348598, guid: d9f538cf1454b8d4299ba928ec0b8df6,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7506856101570348592, guid: d9f538cf1454b8d4299ba928ec0b8df6,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3363,6 +3363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506856101570348598, guid: d9f538cf1454b8d4299ba928ec0b8df6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f538cf1454b8d4299ba928ec0b8df6, type: 3}
@@ -5946,16 +5951,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
-        type: 3}
-      propertyPath: cayoteeTime
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5594174281005447986, guid: a0ce19bdfcdf9da40a29a44661e71998,
         type: 3}
       propertyPath: m_GravityScale
@@ -5970,6 +5965,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LinearDrag
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: cayoteeTime
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 231928228, guid: a0ce19bdfcdf9da40a29a44661e71998, type: 3}
       propertyPath: m_Enabled
@@ -6458,6 +6463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a1f67e95c8c4b4187d6706b65531de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   soundManager: {fileID: 1123951861}
   Neutral: {fileID: 11400000, guid: 4d1e63b711a0a3b43b4d08c203fc29eb, type: 2}
   Green: {fileID: 11400000, guid: ba8561159ab97ea40a5d488397f72525, type: 2}

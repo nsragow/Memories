@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 	private int touchingFrames = 0;
 
     private int extraJumpFrames = 0;
+
+    [SerializeField]
+    private SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +76,7 @@ public class Player : MonoBehaviour
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, upForce);
             //rigidbody2D.AddForce(new Vector2(0f, upForce));
             extraJumpFrames = 0;
+            soundManager.jumpManager.Play();
         }
         else
         {
@@ -88,5 +92,9 @@ public class Player : MonoBehaviour
 		touchingFrames = cayoteeTime;
 
 	}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        soundManager.landingManager.Play();
+    }
 
 }

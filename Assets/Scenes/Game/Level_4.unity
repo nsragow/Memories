@@ -286,6 +286,11 @@ PrefabInstance:
       propertyPath: upForce
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5594174281005447985, guid: a0ce19bdfcdf9da40a29a44661e71998,
+        type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1169469760}
     - target: {fileID: 231928228, guid: a0ce19bdfcdf9da40a29a44661e71998, type: 3}
       propertyPath: m_Enabled
       value: 0

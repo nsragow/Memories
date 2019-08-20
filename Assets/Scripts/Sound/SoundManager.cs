@@ -3,8 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class SoundManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class JumpManager : MonoBehaviour {
+        [SerializeField]
+        private AudioClip[] jumpClips;
+        private AudioSource jumpSource;
+
+        public void Init(AudioClip[] audioClips, float volume = 1.0f)
+        {
+            jumpSource = gameObject.AddComponent<AudioSource>();
+            jumpClips = audioClips;
+            jumpSource.volume = volume;
+        }
+
+        public void Switch(int colourId)
+        {
+            jumpSource.clip = jumpClips[colourId-1];
+        }
+
+        public void Play()
+        {
+            jumpSource.Play();
+        }
+    }
+
+    [HideInInspector]
+    public SoundManager.JumpManager jumpManager;
+    [SerializeField]
+    private AudioClip[] jumpClips;
+    [HideInInspector]
+    public SoundManager.JumpManager landingManager;
+    [SerializeField]
+    private AudioClip[] landingClips;
+
     public float maxVolume;
     public AudioClip[] changeSounds;
     
@@ -37,6 +72,12 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jumpManager = gameObject.AddComponent<SoundManager.JumpManager>();
+        landingManager = gameObject.AddComponent<SoundManager.JumpManager>();
+
+        jumpManager.Init(jumpClips);
+        landingManager.Init(landingClips);
+
         switchSource = gameObject.AddComponent<AudioSource>();
         switchSource.volume = switchVolume;
 

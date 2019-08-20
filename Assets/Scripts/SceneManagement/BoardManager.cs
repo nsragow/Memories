@@ -114,7 +114,12 @@ public class BoardManager : MonoBehaviour
     {
         //Do time things
         if (soundManager != null)
+        {
             soundManager.AddTime(color, newTime + 3);
+            soundManager.jumpManager.Switch(color);
+            soundManager.landingManager.Switch(color);
+        }
+
     }
 
     public void Player_Anim(int key)

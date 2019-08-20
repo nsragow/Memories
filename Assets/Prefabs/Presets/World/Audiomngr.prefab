@@ -43,6 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab275eda12b3b450490b2aeb915dc359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpManager: {fileID: 0}
+  jumpClips:
+  - {fileID: 8300000, guid: c4d214ca492464c44bdbe567ff64450a, type: 3}
+  - {fileID: 8300000, guid: 6b84b38e34b9f504eac8597f9fc32790, type: 3}
+  - {fileID: 8300000, guid: b1e6b937212162f4abe55f5e5caa856e, type: 3}
+  - {fileID: 8300000, guid: 091d5b640047ed74f82d34c6b9e90874, type: 3}
+  - {fileID: 8300000, guid: 76e6dc703e1e41d488b89783664b12b8, type: 3}
+  landingManager: {fileID: 0}
+  landingClips:
+  - {fileID: 8300000, guid: 26fbee031f515974e9c95b6403142047, type: 3}
+  - {fileID: 8300000, guid: 6a0655c11cec0f5458db726e8288e4bb, type: 3}
+  - {fileID: 8300000, guid: a576a5df86ecd004ea197b562857713a, type: 3}
+  - {fileID: 8300000, guid: a6033209a22a0a54ebdc58f18d1a2ba7, type: 3}
+  - {fileID: 8300000, guid: b0892ec116549af4b9380c08823e9414, type: 3}
   maxVolume: 1
   changeSounds:
   - {fileID: 8300000, guid: 825fa655c822b495d812cb01cbb480ad, type: 3}
